@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       	http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+        ">
+    <description>
+       system Common
+    </description>
+	  <bean id="gps.fileManageBean"	class="com.gzeport.app.gps.common.FileManagerBean"  >
+		<property name="userName">
+			<value>
+				${nsGPS.ftpUserName}
+			</value>
+		</property>
+	 
+	     <property name="userPwd">
+			<value>
+				${nsGPS.ftpUserPwd}
+			</value>
+		</property>
+		
+		<property name="hostIp">
+			<value>
+				${nsGPS.ftpHost}
+			</value>
+		</property>
+		<property name="port">
+			<value>
+				${nsGPS.port}
+			</value>
+		</property>
+		<property name="remoteUploadDir">
+			<value>
+				${nsGPS.ftpUploadDir}
+			</value>
+		</property>
+		
+		<property name="remoteDownDir">
+			<value>
+				${nsGPS.ftpDownloadDir}
+			</value>
+		</property>
+		
+		<property name="localBaseDir">
+			<value>${nsGPS.localBaseDir}</value>
+		</property>
+		<property name="localUploadDir">
+			<value>
+				${nsGPS.localFtpUploadDir}
+		     </value>
+		</property>
+				<property name="localDownDir">
+			<value>
+				${nsGPS.localFtpDownloadDir}
+			</value>
+		</property>
+			<property name="localDowndErrorDir">
+			<value>
+				${nsGPS.localDownErrorDir}
+		     </value>
+		</property>
+				<property name="localUploadErrorDir">
+			<value>
+				${nsGPS.localUploadErrorDir}
+			</value>
+		</property>
+		<property name="dalyTime">
+			<value>
+				${nsGPS.dalyTime}
+			</value>
+		</property>
+		
+		<property name="sendByEdi">
+			<value>${nsGPS.sendByEdi}</value>
+		</property>
+		<property name="docType">
+			<value>${docTypes}</value>
+		</property>
+		<property name="downDosType">
+			<value>${database.manifest_downDoctype}</value>
+		</property>
+		<property name="receiverCode">
+			<value>${database.manifest_receiveCode}</value>
+		</property>
+		<property name="beanNames">
+			<value>${serviceBeanNames}</value>
+		</property>
+		<property name="localbool">
+		<value type="java.lang.Boolean">${nsGPS.localbool}</value>
+		</property>
+	</bean>
+	 	
+	 	    
+</beans>

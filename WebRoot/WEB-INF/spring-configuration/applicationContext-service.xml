@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"     
+       xmlns:context="http://www.springframework.org/schema/context"     
+       xmlns:jee="http://www.springframework.org/schema/jee"     
+   	   xmlns:tx="http://www.springframework.org/schema/tx"     
+	   xmlns:mvc="http://www.springframework.org/schema/mvc" 
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/aop    
+            http://www.springframework.org/schema/aop/spring-aop-2.5.xsd     
+            http://www.springframework.org/schema/beans    
+            http://www.springframework.org/schema/beans/spring-beans-3.0.xsd     
+            http://www.springframework.org/schema/context    
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd     
+            http://www.springframework.org/schema/jee    
+            http://www.springframework.org/schema/jee/spring-jee-2.5.xsd     
+            http://www.springframework.org/schema/tx    
+            http://www.springframework.org/schema/tx/spring-tx-3.0.xsd     
+            http://www.springframework.org/schema/mvc       
+           http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	<description>
+			 service
+	</description>
+    
+     <bean id="newThread" class="com.gzeport.app.gps.help.thread.NewThread"> 
+	      <property name="carGpsDataHelp">
+	    	 <ref bean="carGpsDataHelp" />
+	     </property> 
+	     <property name="isRunable" >
+	      <!-- 线程是否启用 true为启用-->
+	     	<value type="java.lang.Boolean">true</value>
+	     </property>
+	     <property name="sleepTime">
+	    	 <!-- 线程睡眠时间    为 毫秒-->
+	     	<value type="java.lang.Long">100000</value> 
+	     </property>
+    </bean>
+    
+    <bean id="carGpsDataHelp" class="com.gzeport.app.gps.help.CarGpsDataHelp" >
+		 	<property name="redisTemplate" >
+		 		<ref bean="redisTemplate"/>
+		 	</property>
+		 	<property name="gpsFileManagerBean">
+		 		<ref bean="gps.fileManageBean"/>
+		 	</property>
+		 	<property name="vehicleInfoDao">
+		 		<ref bean="vehInfoDAO"/>
+		 	</property>
+	 </bean>
+	 
+	   <bean id="vehicleInfoManager" class="com.gzeport.app.gps.manager.VehicleInfoManagerImpl" >
+		 	<property name="vehileInfoDao">
+		 		<ref bean="vehInfoDAO"/>
+		 	</property>
+	 </bean>
+	 
+	 
+	    <bean id="nsCarInfoManager" class="com.gzeport.app.gps.manager.NsCarinfoManagerImpl">
+		    <property name="nsCarInfoDao" ref="nsCarInfoDAO">
+		    </property>
+	 </bean>
+	 
+	 
+    
+        
+</beans>  

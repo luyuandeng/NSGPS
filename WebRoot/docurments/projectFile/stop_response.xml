@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+
+<gpsResponse>
+	<responseTpye>2</responseTpye>
+	<sendUser>gzep</sendUser>
+	<reciveUser>nsTest</reciveUser>
+	<plate>323</plate>
+	<carInAreaNo>2222</carInAreaNo>
+	<responseCode>0</responseCode>
+	<endTime>2013-05-13 24:21:21</endTime>
+</gpsResponse>
