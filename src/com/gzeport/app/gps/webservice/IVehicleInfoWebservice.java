@@ -7,5 +7,5 @@ public interface IVehicleInfoWebservice {
 	
 	public String  startGetGpsData( String userName,String password,String queryType,String plate,String inAreaNo,String sTime,String eTime);
 	
-	public String  stopGetGpsData( String userName,String password,String queryType,String plate,String inAreaNo,String sTime);
+	public String  stopGetGpsData( String userName,String password,String queryType,String plate,String inAreaNo,String eTime);
 }

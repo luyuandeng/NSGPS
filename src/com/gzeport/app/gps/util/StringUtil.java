@@ -410,6 +410,31 @@ public class StringUtil {
 	    }
 	    return flag;
 	  }
+	  /**
+	   * @功能: 生成XML报文不换行 
+	   * @编码: luyd luyuandeng@gzeport.com 2013-6-4 下午5:28:29
+	   */
+	  public static boolean doc2XmlFileOneLine(String documentContent, String filename, String encode) {
+		Document document = string2Document(documentContent);
+	    boolean flag = true;
+	    try
+	    {
+	  //    OutputFormat format = OutputFormat.createPrettyPrint();
+	      String defaultEncode = "UTF-8";
+	      if (encode != null)
+	        defaultEncode = encode;
+	      filename = createNewFileName(filename);
+	      XMLWriter writer = new XMLWriter(new OutputStreamWriter(new FileOutputStream(filename), defaultEncode));
+	      writer.write(document);
+	      writer.close();
+	    }
+	    catch (Exception ex)
+	    {
+	      flag = false;
+	      ex.printStackTrace();
+	    }
+	    return flag;
+	  }
 	  
 	  public static Document string2Document(String s)
 	  {

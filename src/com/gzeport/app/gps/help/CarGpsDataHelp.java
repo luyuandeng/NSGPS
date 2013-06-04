@@ -137,7 +137,7 @@ public class CarGpsDataHelp {
     					 				VehicleInfoXmlBean xmlBean = new VehicleInfoXmlBean(info); //待传入对象转换为XML对象
     					 				String xml = NSGPSConstats.PATTERN + StringUtil.trim(xs.toXML(xmlBean));
     					 				String fileName =fileNameBase+ File.separator+"GPS"+StringUtil.parseDateToString(new Date(),"yyyyMMdd")+StringUtil.getUniqueId()+".xml";
-    					 				StringUtil.doc2XmlFile(xml, fileName, null);
+    					 				StringUtil.doc2XmlFileOneLine(xml, fileName, null);
     					 			} //====生成报文结束========
     					    	 }
     					    }
