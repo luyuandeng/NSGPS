@@ -34,7 +34,7 @@
 	     </property>
 	     <property name="sleepTime">
 	    	 <!-- 线程睡眠时间    为 毫秒-->
-	     	<value type="java.lang.Long">100000</value> 
+	     	<value type="java.lang.Long">10</value> 
 	     </property>
     </bean>
     

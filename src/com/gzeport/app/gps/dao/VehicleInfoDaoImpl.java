@@ -183,7 +183,7 @@ public class VehicleInfoDaoImpl extends AbstractDAO implements IVehicleInfoDao,S
   					xmlBean = new VehicleInfoXmlBean(vinfo); //待传入对象转换为XML对象
   					String xml = NSGPSConstats.PATTERN + StringUtil.trim(xs.toXML(xmlBean));
   					String fileName =fileNameBase+ File.separator+"GPS"+StringUtil.parseDateToString(new Date(),"yyyyMMdd")+StringUtil.getUniqueId()+".xml";
-  					StringUtil.doc2XmlFile(xml, fileName, null);  //生成数据报文
+  					StringUtil.doc2XmlFileOneLine(xml, fileName, null);  //生成数据报文
   	  		}
   		}
 		}catch (Exception e) {
