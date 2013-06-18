@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="NSGPS"
+  name="NSGPS2"
   id="myeclipse.1368755128739"
   context-root="/NSGPS"
   j2ee-spec="5.0"
-  archive="NSGPS.war">
+  archive="NSGPS2.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>
